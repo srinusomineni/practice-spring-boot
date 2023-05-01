@@ -4,12 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -26,9 +26,9 @@ public class UserPurchases implements Serializable {
 	private Date transactionDate;
 	private int rewardPoints;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-	private RewardUsers rewardUser;
+	@ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+	private RewardUsers rewardUsers;
 
 	public long getId() {
 		return id;
@@ -54,12 +54,12 @@ public class UserPurchases implements Serializable {
 		this.transactionDate = transactionDate;
 	}
 
-	public RewardUsers getRewardUser() {
-		return rewardUser;
+	public RewardUsers getRewardUsers() {
+		return rewardUsers;
 	}
 
-	public void setRewardUser(RewardUsers rewardUser) {
-		this.rewardUser = rewardUser;
+	public void setRewardUsers(RewardUsers rewardUsers) {
+		this.rewardUsers = rewardUsers;
 	}
 	
 	public int getRewardPoints() {
@@ -77,12 +77,12 @@ public class UserPurchases implements Serializable {
         if (o == null || getClass() != o.getClass())
             return false;
         UserPurchases userPurchases = (UserPurchases) o;
-        return id == userPurchases.id && transactionAmount.equals(userPurchases.transactionAmount) && transactionDate == userPurchases.transactionDate && rewardUser == userPurchases.rewardUser && rewardPoints == userPurchases.rewardPoints;
+        return id == userPurchases.id && transactionAmount.equals(userPurchases.transactionAmount) && transactionDate == userPurchases.transactionDate && rewardUsers == userPurchases.rewardUsers && rewardPoints == userPurchases.rewardPoints;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, transactionAmount, transactionDate, rewardUser, rewardPoints);
+        return Objects.hash(id, transactionAmount, transactionDate, rewardUsers, rewardPoints);
     }
 
     @Override

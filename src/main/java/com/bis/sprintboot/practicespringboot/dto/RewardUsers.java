@@ -4,12 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,9 +37,8 @@ public class RewardUsers implements Serializable {
 		this.username = username;
 	}
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "user_id")
-	private List<UserPurchases> listUserPurchase;
+//	@OneToMany(mappedBy = "rewardUsers")
+//	private List<UserPurchases> listUserPurchases;
 	
 	@Override
     public boolean equals(Object o) {
@@ -54,14 +50,14 @@ public class RewardUsers implements Serializable {
         return id == rewardUsers.id && username.equals(rewardUsers.username);
     }
 
-	
-    public List<UserPurchases> getListUserPurchase() {
-		return listUserPurchase;
-	}
-
-	public void setListUserPurchase(List<UserPurchases> listUserPurchase) {
-		this.listUserPurchase = listUserPurchase;
-	}
+//	
+//    public List<UserPurchases> getListUserPurchases() {
+//		return listUserPurchases;
+//	}
+//
+//	public void setListUserPurchases(List<UserPurchases> listUserPurchases) {
+//		this.listUserPurchases = listUserPurchases;
+//	}
 
 	@Override
     public int hashCode() {
