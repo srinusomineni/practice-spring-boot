@@ -29,7 +29,7 @@ public class UserPurchasesService {
 		
 		if(!userPurchases.isEmpty()) {
 			userPurchases.stream().forEach(purchase -> {
-				System.out.println(purchase.toString());
+			//	System.out.println(purchase.toString());
 				purchase.setRewardPoints(calculateRewardPoints(purchase.getTransactionAmount()));
 				System.out.println(purchase.toString());
 			});
@@ -37,6 +37,23 @@ public class UserPurchasesService {
 		
 		return userPurchases;
 	}
+	
+	public List<UserPurchases> getUserPurchasesbyUserId(Long userId) {
+		List<UserPurchases> userPurchases = userPurchasesRepository.findByUserId(userId);
+		
+		System.out.println(userPurchases.size());
+		
+		if(!userPurchases.isEmpty()) {
+			userPurchases.stream().forEach(purchase -> {
+			//	System.out.println(purchase.toString());
+				purchase.setRewardPoints(calculateRewardPoints(purchase.getTransactionAmount()));
+				System.out.println(purchase.toString());
+			});
+		}
+		
+		return userPurchases;
+	}
+	
 	
 	public static int calculateRewardPoints(String amount) {
 		double transAmount = Double.parseDouble(amount);

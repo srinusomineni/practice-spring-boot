@@ -28,6 +28,6 @@ public class RewardsController {
 	
 	@RequestMapping("/retrivePurchasesByuserId/{id}")
 	public List<UserPurchases> retrivePurchases(@PathVariable("id") Long id) {
-		return rewardUsersService.getRewardPintsByUserId(id);
+		return userPurchasesService.getUserPurchasesbyUserId(id);
 	}
 }

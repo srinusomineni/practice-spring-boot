@@ -20,22 +20,22 @@ public class RewardUsersService {
 	@Autowired
 	private RewardUserRepository rewardUserRepository;
 	
-	public List<UserPurchases> getRewardPintsByUserId(Long id) {
-		
-		Optional<RewardUsers> userPurchases = rewardUserRepository.findById(id);
-		List<UserPurchases> listPurchases = new ArrayList<UserPurchases>();
-		if(userPurchases.isPresent()) {
-			listPurchases = userPurchases.get().getListUserPurchase();
-			if(!listPurchases.isEmpty()) {
-				listPurchases.stream().forEach(purchase -> {
-					System.out.println(purchase.toString());
-					purchase.setRewardPoints(UserPurchasesService.calculateRewardPoints(purchase.getTransactionAmount()));
-					System.out.println(purchase.toString());
-				});
-			}
-		}
-		
-		return listPurchases;
-	}
+//	public List<UserPurchases> getRewardPintsByUserId(Long id) {
+//		
+//		Optional<RewardUsers> userPurchases = rewardUserRepository.findById(id);
+//		List<UserPurchases> listPurchases = new ArrayList<UserPurchases>();
+//		if(userPurchases.isPresent()) {
+//			listPurchases = userPurchases.get().getListUserPurchases();
+//			if(!listPurchases.isEmpty()) {
+//				listPurchases.stream().forEach(purchase -> {
+//					System.out.println(purchase.toString());
+//					purchase.setRewardPoints(UserPurchasesService.calculateRewardPoints(purchase.getTransactionAmount()));
+//					System.out.println(purchase.toString());
+//				});
+//			}
+//		}
+//		
+//		return listPurchases;
+//	}
 
 }

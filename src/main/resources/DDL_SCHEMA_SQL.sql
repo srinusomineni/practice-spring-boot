@@ -11,6 +11,5 @@ CREATE TABLE "tbl_user_purchases" (
 "user_id" int NOT NULL,  
 "transaction_amount" NUMERIC(8,2) NOT NULL,
 "transaction_date" date not null,
-"reward_points" int,
-CONSTRAINT FK_USERINFO_PURCHASE FOREIGN KEY ("user_id") REFERENCES "tbl_users"("id")
+"reward_points" int
 );

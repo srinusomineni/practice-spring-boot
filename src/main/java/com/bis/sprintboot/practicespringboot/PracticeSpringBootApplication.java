@@ -8,7 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {
 		"com.bis.sprintboot.**.service",
 		"com.bis.sprintboot.**.web",
-		"com.bis.springboot.**.repo"
+		"com.bis.springboot.**.repo",
+		"com.bis.springboot.**.dto"
 		})
 public class PracticeSpringBootApplication {
 
