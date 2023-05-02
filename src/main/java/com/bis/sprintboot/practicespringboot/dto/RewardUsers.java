@@ -1,13 +1,11 @@
 package com.bis.sprintboot.practicespringboot.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name="tbl_users")
@@ -37,9 +35,6 @@ public class RewardUsers implements Serializable {
 		this.username = username;
 	}
 	
-//	@OneToMany(mappedBy = "rewardUsers")
-//	private List<UserPurchases> listUserPurchases;
-	
 	@Override
     public boolean equals(Object o) {
         if (this == o)
@@ -49,15 +44,6 @@ public class RewardUsers implements Serializable {
         RewardUsers rewardUsers = (RewardUsers) o;
         return id == rewardUsers.id && username.equals(rewardUsers.username);
     }
-
-//	
-//    public List<UserPurchases> getListUserPurchases() {
-//		return listUserPurchases;
-//	}
-//
-//	public void setListUserPurchases(List<UserPurchases> listUserPurchases) {
-//		this.listUserPurchases = listUserPurchases;
-//	}
 
 	@Override
     public int hashCode() {

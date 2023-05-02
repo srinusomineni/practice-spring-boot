@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 		"com.bis.springboot.**.repo",
 		"com.bis.springboot.**.dto"
 		})
-public class PracticeSpringBootApplication {
+public class RewardPointsSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PracticeSpringBootApplication.class, args);
+		SpringApplication.run(RewardPointsSpringBootApplication.class, args);
 	}
 
 }

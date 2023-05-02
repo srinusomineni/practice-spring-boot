@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"transactionAmount": "120.00",
+		"transactionDate": "2022-05-08T04:00:00.000+00:00",
+		"rewardPoints": 90,
+		"rewardUsers": {
+			"id": 1,
+			"username": "srinu"
+		}
+	},
+	{
+		"id": 2,
+		"transactionAmount": "60.00",
+		"transactionDate": "2023-01-01T05:00:00.000+00:00",
+		"rewardPoints": 10,
+		"rewardUsers": {
+			"id": 1,
+			"username": "srinu"
+		}
+	},
+	{
+		"id": 3,
+		"transactionAmount": "200.00",
+		"transactionDate": "2022-08-05T04:00:00.000+00:00",
+		"rewardPoints": 250,
+		"rewardUsers": {
+			"id": 1,
+			"username": "srinu"
+		}
+	}
+]
