@@ -1,2 +1,2 @@
 # practice-spring-boot
-practice-spring-boot
+Reward Point calculation Application
